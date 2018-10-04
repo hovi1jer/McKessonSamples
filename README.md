@@ -1,0 +1,2 @@
+# AlternatingIterator
+AlternatingIterator For McKesson 
