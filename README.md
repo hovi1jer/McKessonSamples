@@ -2,13 +2,15 @@
 
 There are two folders each containing my solution to one of the the two problems provided by McKesson.
 
-The first folder, AlternatingIterator is an Eclipse Java8 project that contains an implementation for the AlternatingIterator interface and test cases to ensure the expected functionality.
+The first folder, AlternatingIterator is an Eclipse Java8 Gradle project that contains an implementation for the AlternatingIterator interface and test cases to ensure the expected functionality.
 
 	To run the test cases:
 		1) Clone the McKessonSamples repository, if it isn't
-		2) Open Eclipse and import the AlternatingIterator into Eclipse
-		3) In the AlternatingIterator project, locate the AlternatingIteratorTest.java class in the src/mckesson/iterator directory
-		4) Right click AlternatingIteratorTest.java -> Run As -> JUnit Test
+		2) Open a command prompt
+		3) Navigate to the AlternatingIterator directory
+		4) Type the following command 
+				'gradlew build && gradlew test' and press enter
+		5) Test cases should execute in the command prompt
 
 The second folder, McKessonRestApi is an Eclipse Java8 Gradle Spring Boot project that contains an implementation of a single rest end point that allows a user to added and test cases to ensure the expected functionality.
 
@@ -37,5 +39,5 @@ The second folder, McKessonRestApi is an Eclipse Java8 Gradle Spring Boot projec
 		2) Open a command prompt
 		3) Navigate to the McKessonRestApi directory
 		4) Type the following command 
-				'gradlew test' and press enter
+				'gradlew build && gradlew test' and press enter
 		5) Test cases should execute in the command prompt

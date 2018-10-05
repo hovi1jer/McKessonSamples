@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mckesson.iterator.AlternatingIteratorTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-10-05T03:16:31" hostname="Jeremy-PC" time="0.03">
+  <properties/>
+  <testcase name="testStringHasNextAndNextMethods" classname="com.mckesson.iterator.AlternatingIteratorTest" time="0.022"/>
+  <testcase name="testAllEmptyIterators" classname="com.mckesson.iterator.AlternatingIteratorTest" time="0.0"/>
+  <testcase name="testStringNextMethodOnly" classname="com.mckesson.iterator.AlternatingIteratorTest" time="0.001"/>
+  <testcase name="testSomeNullIterators" classname="com.mckesson.iterator.AlternatingIteratorTest" time="0.001"/>
+  <testcase name="testSomeEmptyIterators" classname="com.mckesson.iterator.AlternatingIteratorTest" time="0.0"/>
+  <testcase name="testStringHasNextMethodOnly" classname="com.mckesson.iterator.AlternatingIteratorTest" time="0.0"/>
+  <testcase name="testIntegerHasNextAndNextMethods" classname="com.mckesson.iterator.AlternatingIteratorTest" time="0.001"/>
+  <testcase name="testAllNullIterators" classname="com.mckesson.iterator.AlternatingIteratorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
