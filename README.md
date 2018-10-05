@@ -19,7 +19,7 @@ The second folder, McKessonRestApi is an Eclipse Java8 Gradle Spring Boot projec
 		2) Open a command prompt
 		3) Navigate to the McKessonRestApi directory
 		4) Type the following command 
-			'gradlew build && java -jar build/libs/McKessonRestApi-0.0.1-SNAPSHOT.jar' and press enter
+			'gradlew build && java -jar build/libs/McKessonRestApi-0.0.1-SNAPSHOT.jar'and press enter
 		5) The rest service should start
 		6) Open a rest client
 		7) Create a new request with the follow:
