@@ -1,4 +1,4 @@
-package mckesson.iterator;
+package com.mckesson.iterator;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
