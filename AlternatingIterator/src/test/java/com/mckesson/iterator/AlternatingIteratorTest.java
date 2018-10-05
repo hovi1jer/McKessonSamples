@@ -8,6 +8,11 @@ import java.util.NoSuchElementException;
 
 import org.junit.rules.ExpectedException;
 
+/**
+ * @author jhovis
+ * 
+ * Test class for the AlternatingIterator implmentation
+ */
 public class AlternatingIteratorTest {
 
 	@org.junit.Rule 

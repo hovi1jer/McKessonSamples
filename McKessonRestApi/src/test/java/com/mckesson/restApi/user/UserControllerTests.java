@@ -19,9 +19,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+/**
+ * Class to test the controller of the user REST API
+ * 
+ * @author jhovis
+ * 
+ */
 public class UserControllerTests extends ApplicationTests {
-	public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
-	
+	public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(),
+			MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
+
 	@Autowired
 	private WebApplicationContext webApplicationContext;
 
@@ -32,7 +39,8 @@ public class UserControllerTests extends ApplicationTests {
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 	}
 
-	// Don't include this test as the users end point is not currently included in the API
+	// Don't include this test as the users end point is not currently included in
+	// the API
 	// @Test
 	public void testGetUsers() throws Exception {
 
@@ -41,7 +49,7 @@ public class UserControllerTests extends ApplicationTests {
 
 	@Test
 	public void testPutUser() throws Exception {
-		
+
 		final int id = 1;
 		final String name = "Jeremy Hovis";
 		final String email = "jeremyhovis@gmail.com";
@@ -54,17 +62,14 @@ public class UserControllerTests extends ApplicationTests {
 		ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
 		String requestJson = ow.writeValueAsString(user);
 
-		mockMvc.perform(put("/user/" + id)
-			.contentType(APPLICATION_JSON_UTF8).content(requestJson))
-			.andExpect(status().isOk())
-			.andExpect(jsonPath("$.id").value("1"))
-			.andExpect(jsonPath("$.name").value(name))
-			.andExpect(jsonPath("$.email").value(email));
+		mockMvc.perform(put("/user/" + id).contentType(APPLICATION_JSON_UTF8).content(requestJson))
+				.andExpect(status().isOk()).andExpect(jsonPath("$.id").value("1"))
+				.andExpect(jsonPath("$.name").value(name)).andExpect(jsonPath("$.email").value(email));
 	}
-	
+
 	@Test
 	public void testPutNullName() throws Exception {
-		
+
 		final int id = 1;
 		final String name = null;
 		final String email = "jeremyhovis@gmail.com";
@@ -77,14 +82,13 @@ public class UserControllerTests extends ApplicationTests {
 		ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
 		String requestJson = ow.writeValueAsString(user);
 
-		mockMvc.perform(put("/user/" + id)
-			.contentType(APPLICATION_JSON_UTF8).content(requestJson))
-			.andExpect(status().isBadRequest());
+		mockMvc.perform(put("/user/" + id).contentType(APPLICATION_JSON_UTF8).content(requestJson))
+				.andExpect(status().isBadRequest());
 	}
-	
+
 	@Test
 	public void testPutUserEmptyName() throws Exception {
-		
+
 		final int id = 1;
 		final String name = "";
 		final String email = "jeremyhovis@gmail.com";
@@ -97,14 +101,13 @@ public class UserControllerTests extends ApplicationTests {
 		ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
 		String requestJson = ow.writeValueAsString(user);
 
-		mockMvc.perform(put("/user/" + id)
-			.contentType(APPLICATION_JSON_UTF8).content(requestJson))
-			.andExpect(status().isBadRequest());
+		mockMvc.perform(put("/user/" + id).contentType(APPLICATION_JSON_UTF8).content(requestJson))
+				.andExpect(status().isBadRequest());
 	}
-	
+
 	@Test
 	public void testPutUserNullEmail() throws Exception {
-		
+
 		final int id = 1;
 		final String name = "Jeremy Hovis";
 		final String email = null;
@@ -117,14 +120,13 @@ public class UserControllerTests extends ApplicationTests {
 		ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
 		String requestJson = ow.writeValueAsString(user);
 
-		mockMvc.perform(put("/user/" + id)
-			.contentType(APPLICATION_JSON_UTF8).content(requestJson))
-			.andExpect(status().isBadRequest());
+		mockMvc.perform(put("/user/" + id).contentType(APPLICATION_JSON_UTF8).content(requestJson))
+				.andExpect(status().isBadRequest());
 	}
-	
+
 	@Test
 	public void testPutUserEmptyEmail() throws Exception {
-		
+
 		final int id = 1;
 		final String name = "Jeremy Hovis";
 		final String email = "";
@@ -137,14 +139,13 @@ public class UserControllerTests extends ApplicationTests {
 		ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
 		String requestJson = ow.writeValueAsString(user);
 
-		mockMvc.perform(put("/user/" + id)
-			.contentType(APPLICATION_JSON_UTF8).content(requestJson))
-			.andExpect(status().isBadRequest());
+		mockMvc.perform(put("/user/" + id).contentType(APPLICATION_JSON_UTF8).content(requestJson))
+				.andExpect(status().isBadRequest());
 	}
-	
+
 	@Test
 	public void testPutUserInvalidEmail() throws Exception {
-		
+
 		final int id = 1;
 		final String name = "Jeremy Hovis";
 		final String email = "jeremyhovisgmail.com";
@@ -157,8 +158,7 @@ public class UserControllerTests extends ApplicationTests {
 		ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
 		String requestJson = ow.writeValueAsString(user);
 
-		mockMvc.perform(put("/user/" + id)
-			.contentType(APPLICATION_JSON_UTF8).content(requestJson))
-			.andExpect(status().isBadRequest());
+		mockMvc.perform(put("/user/" + id).contentType(APPLICATION_JSON_UTF8).content(requestJson))
+				.andExpect(status().isBadRequest());
 	}
 }
